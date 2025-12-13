@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5493789-f5cc-4818-b64b-3277d2c6c4f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/EcommerceProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/cart_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/checkout_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/home_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/login_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/order_history_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/product_detail_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/product_list_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/profile_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/frames/signup_frame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/main_window.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/theme.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="36BJoZAcgKAJIFNOhOhwUdxYb7i" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.cart_frame.executor": "Run",
+    "Python.home_frame.executor": "Run",
+    "Python.login_frame.executor": "Run",
+    "Python.main_window.executor": "Debug",
+    "Python.order_history_frame.executor": "Run",
+    "Python.signup_frame.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\PycharmProjects\EcommerceProject\src\gui" />
+      <recent name="C:\Users\DELL\PycharmProjects\EcommerceProject" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EcommerceProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/gui/main_window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main_window" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5493789-f5cc-4818-b64b-3277d2c6c4f6" name="Changes" comment="" />
+      <created>1764474206510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764474206510</updated>
+    </task>
+    <servers />
+  </component>
+</project>
