@@ -1,0 +1,31 @@
+025-12-31 00:42:48,509 - ShopEasy - ERROR - Database connection error (Attempt 1/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 00:43:10,147 - ShopEasy - ERROR - Database connection error (Attempt 2/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (64)')
+2025-12-31 00:43:29,065 - ShopEasy - ERROR - Database connection error (Attempt 3/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:03:36,547 - ShopEasy - ERROR - Database connection error (Attempt 1/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:03:55,002 - ShopEasy - ERROR - Database connection error (Attempt 2/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:04:15,636 - ShopEasy - ERROR - Database connection error (Attempt 3/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:05:04,862 - ShopEasy - ERROR - Database connection error (Attempt 1/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:05:23,072 - ShopEasy - ERROR - Database connection error (Attempt 2/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:05:43,962 - ShopEasy - ERROR - Database connection error (Attempt 3/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:07:51,871 - ShopEasy - ERROR - Database connection error (Attempt 1/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:08:12,514 - ShopEasy - ERROR - Database connection error (Attempt 2/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (64)')
+2025-12-31 01:08:30,809 - ShopEasy - ERROR - Database connection error (Attempt 3/3): ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-12-31 01:24:53,422 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:25:50,002 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:26:19,744 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:29:24,369 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:29:24,493 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:35:26,839 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:35:42,269 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:51:50,085 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:59:05,611 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 01:59:55,091 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:01:27,810 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:01:27,813 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:02:18,255 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:02:36,661 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:05:18,820 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:05:18,821 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:10:05,969 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:12:13,623 - ShopEasy - INFO - Connected to SQL Server!
+2025-12-31 02:12:13,697 - ShopEasy - INFO - Connected to SQL Server!
