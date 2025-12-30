@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from src.core.constants import AppConstants, Messages, ViewNames
 from src.gui import theme
+from src.core.exceptions import AuthenticationError
 
 class LoginView(ttk.Frame):
     def __init__(self, parent, controller):
@@ -58,7 +59,9 @@ class LoginView(ttk.Frame):
         try:
             if self.user_service.login(username, password):
                 self.controller.show_view(ViewNames.HOME)
-        except ValueError as e:
+        except AuthenticationError as e:
             messagebox.showerror("Login Failed", str(e))
         except Exception as e:
+            from src.core.logger import app_logger
+            app_logger.error(f"Login Error: {e}")
             messagebox.showerror("Error", f"An unexpected error occurred: {e}")

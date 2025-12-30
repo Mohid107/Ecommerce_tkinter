@@ -1,28 +1,35 @@
 import pyodbc
+import time
+from src.core.exceptions import DatabaseError
+from src.core.logger import app_logger
 
 class Database:
     def __init__(self):
         self.connection = None
         self.connect()
 
-    def connect(self):
-        try:
-            self.connection = pyodbc.connect(
-                "Driver={SQL Server};"
-                "Server=DESKTOP-BNC6SIM\\SQLEXPRESS;"
-                "Database=EcommerceDB;"
-                "Trusted_Connection=yes;"
-            )
-            print("Connected to SQL Server!")
-        except Exception as e:
-            print("Database connection error:", e)
+    def connect(self, retries=3, delay=2):
+        attempt = 0
+        while attempt < retries:
+            try:
+                self.connection = pyodbc.connect(
+                    "Driver={SQL Server};"
+                    "Server=DESKTOP-BNC6SIM\\SQLEXPRESS;"
+                    "Database=EcommerceDB;"
+                    "Trusted_Connection=yes;"
+                )
+                app_logger.info("Connected to SQL Server!")
+                return
+            except Exception as e:
+                attempt += 1
+                app_logger.error(f"Database connection error (Attempt {attempt}/{retries}): {e}")
+                if attempt < retries:
+                    time.sleep(delay)
+                else:
+                    raise DatabaseError("Failed to connect to database after multiple attempts.", e)
 
     def execute(self, query, params=None, fetch=False):
-        """Execute a query.
-
-        fetch=True for SELECT statements to return rows
-        fetch=False for INSERT/UPDATE/DELETE statements
-        """
+        """Execute a query with error handling."""
         try:
             cursor = self.connection.cursor()
             if params:
@@ -39,7 +46,7 @@ class Database:
                 cursor.close()
                 return True
         except Exception as e:
-            print("Query Execution Error:", e)
-            return None
+            app_logger.error(f"Query Execution Error: {e} | Query: {query}")
+            raise DatabaseError("Failed to execute query.", e)
 
 db = Database()
