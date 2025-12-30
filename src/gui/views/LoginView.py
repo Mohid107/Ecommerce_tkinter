@@ -57,7 +57,7 @@ class LoginView(ttk.Frame):
         password = self.password_entry.get()
         try:
             if self.user_service.login(username, password):
-                self.controller.show_view(ViewNames.PRODUCT_LIST)
+                self.controller.show_view(ViewNames.HOME)
         except ValueError as e:
             messagebox.showerror("Login Failed", str(e))
         except Exception as e:

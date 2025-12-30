@@ -20,6 +20,8 @@ class Colors:
 # FONTS
 # -------------------------------
 class Fonts:
+    TITLE = ("Helvetica", 24, "bold")
+    SUBTITLE = ("Helvetica", 16)
     HEADER = ("Helvetica", 18, "bold")
     SUBHEADER = ("Helvetica", 14, "bold")
     BODY = ("Helvetica", 12)
