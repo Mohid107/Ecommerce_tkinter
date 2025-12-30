@@ -3,3 +3,6 @@ Pillow
 requests
 pytest
 pytest-mock
+flake8
+pytest-cov
+pyinstaller

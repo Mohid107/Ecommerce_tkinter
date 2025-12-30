@@ -1,0 +1,6 @@
+Date,PR_ID,Author,Reviewer,Status,Comments
+2025-12-30,PR-1,System,User,Approved,"Refactored MVC structure. Good Separation of Concerns."
+2025-12-30,PR-2,System,User,Approved,"UI Polish. Hero section looks good. Requested font fix for crash."
+2025-12-30,PR-3,System,User,Approved,"Login Redirection. Logic moved to LoginView success block."
+2025-12-30,PR-4,System,User,Approved,"Automated GUI Tests. Coverage looks solid (8 pass)."
+2025-12-30,PR-5,System,User,Approved,"CI/CD Setup. Workflow file is correct."
