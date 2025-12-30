@@ -10,6 +10,7 @@ from src.services.OrderService import OrderService
 
 # Views
 from src.views.LoginView import LoginView
+from src.views.UserSignupView import UserSignupView
 from src.views.SignupView import SignupView
 from src.views.HomeView import HomeView
 from src.views.ProductView import ProductView
@@ -48,7 +49,7 @@ class EcommerceApp(tk.Tk):
         
         view_classes = {
             ViewNames.LOGIN: LoginView,
-            ViewNames.SIGNUP: SignupView,
+            ViewNames.SIGNUP: UserSignupView, # Switched to new view
             ViewNames.HOME: HomeView,
             ViewNames.PRODUCT_LIST: ProductView,
             ViewNames.PRODUCT_DETAIL: ProductDetailView,
