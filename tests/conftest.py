@@ -19,9 +19,13 @@ def mock_db(mocker):
     mocker.patch('src.data.db.db', mock_db_instance)
     
     # Patch the references in other modules
-    # These modules might have already imported 'db', so we must patch their reference
-    mocker.patch('src.data.models.db', mock_db_instance)
-    mocker.patch('src.core.services.db', mock_db_instance)
+    # Since we refactored models into submodules, we must patch each one
+    mocker.patch('src.data.models.User.db', mock_db_instance)
+    mocker.patch('src.data.models.Product.db', mock_db_instance)
+    mocker.patch('src.data.models.Order.db', mock_db_instance)
+    
+    # Also patch services if they use it (UserService does)
+    mocker.patch('src.core.services.UserService.db', mock_db_instance)
     
     return mock_db_instance
 
@@ -32,8 +36,9 @@ def mock_pyodbc(mocker):
 
 @pytest.fixture(autouse=True)
 def reset_services():
-    """Reset global state in services.py before each test"""
-    import src.core.services as services
-    services.current_user = None
-    services.cart = []
-    yield
+    """
+    Since services are now instantiable classes, we don't need to weirdly reset globals.
+    But for safety with any legacy singleton usage (if any), we can just pass.
+    Ideally tests should now instantiate fresh services.
+    """
+    pass

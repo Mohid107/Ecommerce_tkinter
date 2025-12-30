@@ -1,99 +1,91 @@
 import tkinter as tk
-from tkinter import ttk
-from src.gui.theme import Colors, Fonts
-from src.gui.frames.login_frame import LoginFrame
-from src.gui.frames.signup_frame import SignupFrame
-from src.gui.frames.product_list_frame import ProductListFrame
-from src.gui.frames.product_detail_frame import ProductDetailFrame
-from src.gui.frames.cart_frame import CartFrame
-from src.gui.frames.checkout_frame import CheckoutFrame
-from src.gui.frames.order_history_frame import OrderHistoryFrame
-from src.gui.frames.profile_frame import ProfileFrame
-from src.gui.frames.home_frame import HomeFrame
+from src.core.constants import AppConstants, ViewNames
+from src.gui.theme import Colors
 
+# Services
+from src.core.services.UserService import UserService
+from src.core.services.ProductService import ProductService
+from src.core.services.CartService import CartService
+from src.core.services.OrderService import OrderService
+
+# Views
+from src.gui.views.LoginView import LoginView
+from src.gui.views.SignupView import SignupView
+from src.gui.views.HomeView import HomeView
+from src.gui.views.ProductView import ProductView
+from src.gui.views.ProductDetailView import ProductDetailView
+from src.gui.views.CartView import CartView
+from src.gui.views.CheckoutView import CheckoutView
+from src.gui.views.OrderHistoryView import OrderHistoryView
+from src.gui.views.ProfileView import ProfileView
 
 class EcommerceApp(tk.Tk):
     def __init__(self):
         super().__init__()
-
-        # Main window properties
-        self.title("ShopEasy Desktop App")
-        # Center the window
-        window_width = 1024
-        window_height = 768
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
         
-        center_x = int((screen_width / 2) - (window_width / 2))
-        center_y = int((screen_height / 2) - (window_height / 2))
+        # 1. Initialize Services (Dependency Injection Container)
+        self.user_service = UserService()
+        self.product_service = ProductService()
+        self.cart_service = CartService()
+        self.order_service = OrderService()
         
-        self.geometry(f"{window_width}x{window_height}+{center_x}+{center_y}")
-        self.configure(bg=Colors.BACKGROUND)  # Changed from PRIMARY to BACKGROUND
+        # Shared State for Navigation
+        self.current_product_id = None
 
-        # Container to hold all frames
-        self.container = tk.Frame(self, bg=Colors.BACKGROUND)  # Changed to BACKGROUND
+        # 2. Window Setup
+        self.title(AppConstants.APP_TITLE)
+        self._center_window(AppConstants.WINDOW_WIDTH, AppConstants.WINDOW_HEIGHT)
+        self.configure(bg=Colors.BACKGROUND)
+
+        # 3. View Container
+        self.container = tk.Frame(self, bg=Colors.BACKGROUND)
         self.container.pack(fill="both", expand=True)
         self.container.grid_rowconfigure(0, weight=1)
         self.container.grid_columnconfigure(0, weight=1)
 
-        # Dictionary to store all frames
-        self.frames = {}
+        # 4. Initialize Views
+        self.views = {}
+        
+        view_classes = {
+            ViewNames.LOGIN: LoginView,
+            ViewNames.SIGNUP: SignupView,
+            ViewNames.HOME: HomeView,
+            ViewNames.PRODUCT_LIST: ProductView,
+            ViewNames.PRODUCT_DETAIL: ProductDetailView,
+            ViewNames.CART: CartView,
+            ViewNames.CHECKOUT: CheckoutView,
+            ViewNames.ORDER_HISTORY: OrderHistoryView,
+            ViewNames.PROFILE: ProfileView,
+        }
 
-        # Initialize frames
-        frame_classes = (
-            LoginFrame,
-            SignupFrame,
-            HomeFrame,
-            ProductListFrame,
-            ProductDetailFrame,
-            CartFrame,
-            CheckoutFrame,
-            OrderHistoryFrame,
-            ProfileFrame,
-        )
+        for name, ViewClass in view_classes.items():
+            # Inject controller (self) which provides access to services
+            view = ViewClass(self.container, self)
+            self.views[name] = view
+            view.grid(row=0, column=0, sticky="nsew")
 
-        for F in frame_classes:
-            frame = F(self.container, self)
-            self.frames[F] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
+        # 5. Start
+        self.show_view(ViewNames.LOGIN)
 
-        # Show the initial frame
-        self.show_frame(LoginFrame)
+    def show_view(self, view_name):
+        """Switch to a different view"""
+        if view_name not in self.views:
+            raise ValueError(f"View {view_name} not found")
+            
+        view = self.views[view_name]
+        view.tkraise()
+        
+        # Refresh if view has a refresh method
+        if hasattr(view, 'refresh'):
+            view.refresh()
 
-    def show_frame(self, frame_class):
-        """Bring the specified frame to the front"""
-        if isinstance(frame_class, str):
-            # Convert string to class
-            frame_mapping = {
-                "LoginFrame": LoginFrame,
-                "SignupFrame": SignupFrame,
-                "HomeFrame": HomeFrame,
-                "ProductListFrame": ProductListFrame,
-                "ProductDetailFrame": ProductDetailFrame,
-                "CartFrame": CartFrame,
-                "CheckoutFrame": CheckoutFrame,
-                "OrderHistoryFrame": OrderHistoryFrame,
-                "ProfileFrame": ProfileFrame,
-            }
-            frame_class = frame_mapping[frame_class]
+    def _center_window(self, width, height):
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        x = int((screen_width / 2) - (width / 2))
+        y = int((screen_height / 2) - (height / 2))
+        self.geometry(f"{width}x{height}+{x}+{y}")
 
-        frame = self.frames[frame_class]
-        frame.tkraise()
-
-        # Refresh frames that need updating when shown
-        if hasattr(frame, 'refresh'):
-            frame.refresh()
-        elif hasattr(frame, 'load_products'):
-            frame.load_products()
-        elif hasattr(frame, 'load_cart'):
-            frame.load_cart()
-        elif hasattr(frame, 'load_profile'):
-            frame.load_profile()
-
-
-# -------------------------------
-# RUN APP
-# -------------------------------
 if __name__ == "__main__":
     app = EcommerceApp()
     app.mainloop()
