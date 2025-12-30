@@ -1,3 +1,5 @@
 pyodbc
 Pillow
 requests
+pytest
+pytest-mock
