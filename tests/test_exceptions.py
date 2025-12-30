@@ -1,8 +1,8 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from src.core.exceptions import DatabaseError, AuthenticationError
-from src.data.db import Database
-from src.core.services.UserService import UserService
+from src.exceptions import DatabaseError, AuthenticationError
+from src.db import Database
+from src.services.UserService import UserService
 
 # ----------------------------------------------------------------
 # Database Tests
@@ -11,7 +11,7 @@ from src.core.services.UserService import UserService
 def test_db_retry_success(mocker):
     """Test that DB connects eventually after retries"""
     # 1. Instantiate DB without triggering the real connect()
-    with patch("src.data.db.Database.connect"):
+    with patch("src.db.Database.connect"):
         db = Database()
         
     # 2. Setup the mock for the actual test
@@ -27,7 +27,7 @@ def test_db_retry_success(mocker):
 
 def test_db_retry_failure(mocker):
     """Test that DB raises DatabaseError after max retries"""
-    with patch("src.data.db.Database.connect"):
+    with patch("src.db.Database.connect"):
         db = Database()
 
     mock_odbc_connect = mocker.patch("pyodbc.connect")
@@ -45,7 +45,7 @@ def test_db_retry_failure(mocker):
 
 def test_user_service_auth_error(mocker):
     """Test UserService raises AuthenticationError"""
-    mock_user_model = mocker.patch("src.core.services.UserService.User")
+    mock_user_model = mocker.patch("src.services.UserService.User")
     mock_user_model.get_by_username.return_value = None # User not found
     
     service = UserService()

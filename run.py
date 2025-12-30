@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 if __name__ == "__main__":
     try:
-        from src.gui.main_window import EcommerceApp
+        from src.app import EcommerceApp
         app = EcommerceApp()
         app.mainloop()
     except ImportError as e:

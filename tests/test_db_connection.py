@@ -1,5 +1,5 @@
 import pytest
-from src.data.db import Database
+from src.db import Database
 
 def test_database_connect_success(mock_pyodbc):
     """Test successful database connection"""
@@ -47,7 +47,7 @@ def test_execute_fetch_results(mock_pyodbc):
 # ----------------------------------------------------------------
 # Extended Model Tests (User, Product, Order)
 # ----------------------------------------------------------------
-from src.data.models import User, Product, Order
+from src.models import User, Product, Order
 
 def test_user_creation(mock_db):
     """Test User.create method"""

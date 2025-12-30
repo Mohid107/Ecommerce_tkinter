@@ -2,8 +2,8 @@ import pytest
 import tkinter as tk
 from tkinter import messagebox
 from unittest.mock import MagicMock, patch
-from src.gui.main_window import EcommerceApp
-from src.core.constants import ViewNames, Messages
+from src.app import EcommerceApp
+from src.constants import ViewNames, Messages
 
 # ----------------------------------------------------------------
 # Fixtures
@@ -12,10 +12,10 @@ from src.core.constants import ViewNames, Messages
 @pytest.fixture
 def mock_services(mocker):
     """Mock all services to isolate UI from business logic/DB"""
-    mocker.patch('src.gui.main_window.UserService')
-    mocker.patch('src.gui.main_window.ProductService')
-    mocker.patch('src.gui.main_window.CartService')
-    mocker.patch('src.gui.main_window.OrderService')
+    mocker.patch('src.app.UserService')
+    mocker.patch('src.app.ProductService')
+    mocker.patch('src.app.CartService')
+    mocker.patch('src.app.OrderService')
 
 @pytest.fixture
 def app(mock_services, mocker):

@@ -1,9 +1,9 @@
 import pytest
-from src.core.services.UserService import UserService
+from src.services.UserService import UserService
 
 @pytest.fixture
 def mock_user_model(mocker):
-    return mocker.patch('src.core.services.UserService.User')
+    return mocker.patch('src.services.UserService.User')
 
 def test_login_success(mock_user_model):
     """Test successful login"""

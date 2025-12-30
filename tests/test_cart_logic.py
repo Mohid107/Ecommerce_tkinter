@@ -1,12 +1,12 @@
 import pytest
-from src.core.services.CartService import CartService
-from src.core.services.OrderService import OrderService
-from src.core.services.UserService import UserService
-from src.data.models import Product
+from src.services.CartService import CartService
+from src.services.OrderService import OrderService
+from src.services.UserService import UserService
+from src.models import Product
 
 @pytest.fixture
 def product_service_mock(mocker):
-    return mocker.patch('src.core.services.CartService.ProductService')
+    return mocker.patch('src.services.CartService.ProductService')
 
 @pytest.fixture
 def cart_service(product_service_mock):
@@ -113,8 +113,8 @@ def test_cart_clearing(cart_service):
 def test_checkout_success(mocker, cart_service):
     """Test successful checkout"""
     # Mocks
-    mock_order = mocker.patch('src.core.services.OrderService.Order')
-    mock_order_item = mocker.patch('src.core.services.OrderService.OrderItem')
+    mock_order = mocker.patch('src.services.OrderService.Order')
+    mock_order_item = mocker.patch('src.services.OrderService.OrderItem')
     
     user_service = mocker.Mock(spec=UserService)
     user_service.get_current_user.return_value = {"id": 1, "username": "testuser"}
