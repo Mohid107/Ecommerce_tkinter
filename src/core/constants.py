@@ -1,5 +1,6 @@
 class AppConstants:
     APP_TITLE = "ShopEasy Desktop App"
+    APP_VERSION = "1.0.0"
     WINDOW_WIDTH = 1024
     WINDOW_HEIGHT = 768
     
