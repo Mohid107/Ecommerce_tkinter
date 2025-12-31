@@ -13,8 +13,8 @@ class Database:
         while attempt < retries:
             try:
                 self.connection = pyodbc.connect(
-                    "Driver={SQL Server};"
-                    "Server=DESKTOP-BNC6SIM\\SQLEXPRESS;"
+                    "Driver={ODBC Driver 17 for SQL Server};"
+                    "Server=DESKTOP-55B3BF3\\SQLEXPRESS;"
                     "Database=EcommerceDB;"
                     "Trusted_Connection=yes;"
                 )

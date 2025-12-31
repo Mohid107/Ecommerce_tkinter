@@ -17,7 +17,8 @@ class Messages:
     
 class ViewNames:
     LOGIN = "LoginView"
-    SIGNUP = "SignupView"
+    SIGNUP = "UserSignupView" # Switched to new view
+    OLD_SIGNUP = "SignupView"
     HOME = "HomeView"
     PRODUCT_LIST = "ProductListView"
     PRODUCT_DETAIL = "ProductDetailView"

@@ -15,13 +15,13 @@ class UserService:
         self.current_user = user
         return True
 
-    def signup(self, username, password):
+    def signup(self, username, password, first_name=None, last_name=None, phone=None, email=None, dob=None):
         if not username or not password:
              raise ValidationError("Username and password cannot be empty.")
         user = User.get_by_username(username)
         if user:
             raise ValidationError("Username already exists.")
-        return User.create(username, password)
+        return User.create(username, password, first_name, last_name, phone, email, dob)
 
     def get_current_user(self):
         return self.current_user
